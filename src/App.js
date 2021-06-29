@@ -15,6 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          OLÁ ISABEL E BRUNA
           Learn React
         </a>
       </header>
