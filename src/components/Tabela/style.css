@@ -1,3 +1,17 @@
-.ant-row {
-  display: flex;
+table{
+  border-collapse: collapse;
+  background: white;
+  width: 100%;
+  text-align: center;
+  border-radius: 2rem;
 }
+
+table,td,th{
+  border: 1px solid #171717;
+  border-radius: 2rem;
+}
+
+h1{
+  font-size: 2rem;
+}
+
