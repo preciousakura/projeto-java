@@ -1,0 +1,21 @@
+.content-grafico{
+    background-color: white;
+    border: 1px solid #ff4d4f;
+    padding: 1rem;
+    border-radius: 1rem;
+
+}
+
+.grafico{
+    width: 100%;
+    height: 200px;
+    background-color: #ff4d4f;
+    margin-bottom: 1rem
+
+}
+
+.ant-col div{
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+
+}
