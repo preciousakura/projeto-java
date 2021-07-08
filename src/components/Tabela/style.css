@@ -1,3 +1,39 @@
-.ant-row {
-  display: flex;
+table{
+  border-collapse: collapse;
+  background: white;
+  width: 100%;
+  text-align: center;
+}
+
+table,td,th{
+  border: 2px solid #171717;
+}
+
+h1{
+  font-size: 2rem;
+}
+
+td, th{
+  width: 8rem;
+  padding: .4rem;
+}
+
+.tabela-content{
+  width: 100%;
+  background: white;
+  overflow-x: scroll;
+  padding-bottom: 1rem;
+}
+
+.tabela-content::-webkit-scrollbar {
+  height: 8px;               /* width of the entire scrollbar */
+}
+
+.tabela-content::-webkit-scrollbar-track {
+  background: white;        /* color of the tracking area */
+}
+
+.tabela-content::-webkit-scrollbar-thumb {
+  background-color: #ff4d4f;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
 }

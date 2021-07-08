@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../assets/fontes/roboto.ttf');
+}
+body{
+    background-color: #E8F0F2;
+    font-family: 'Roboto Slab';
+    padding: 2rem;
+    background: url('../assets/background.jpg')no-repeat bottom;
+    background-size: cover;
+}
+.content{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    justify-content: center;
+}
+.content-left{
+    text-align: center;
+}

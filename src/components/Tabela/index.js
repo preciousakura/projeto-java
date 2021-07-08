@@ -1,28 +1,31 @@
 import React from 'react'
 import estado from '../../data/estados.json'
+import { Row, Col, Input } from 'antd'
 import './style.css'
 
 export function Tabela() {
+  const row_title = { background: '#ff8f90', padding: '2px 0'};
+  const celuda = { background: '#eaeaea', padding: '2px 0'};
   const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-  const valores = [10, 25, 5, 36, 2, 4, 800, 4555, 4, 7, 5, 2, 10, 25, 5, 36, 2, 4, 800, 4555, 4, 7, 5, 2, 50000, 9521, 2]
   return(
     <>
-      <table >
-        <tr>
-          <th>&nbsp;</th>
+    <h1>Dados Covid-19</h1>
+    <div className= 'tabela-content'>
+        <Row wrap={false}>
+          <Col span={4}><div style={row_title}>Mês/Estado</div></Col>
           {estado.UF.map(estados => 
-          <th>{estados.sigla}</th>
+          <Col span={4}><div style={row_title}>{estados.sigla}</div></Col>
           )}
-        </tr>
+        </Row>
         {meses.map(mes => 
-          <tr>
-             <td>{mes}</td>
-             {valores.map(valor => 
-                <td>{valor}</td>
+          <Row style={celuda} wrap={false}>
+             <Col span={4}><div>{mes}</div></Col>
+             {estado.UF.map(valor => 
+                <Col span={4}><div><Input defaultValue={0}/></div></Col>
              )}
-          </tr>
+          </Row>
         )}
-      </table>
+    </div>
     </>
   )
 }
