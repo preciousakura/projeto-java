@@ -1,6 +1,6 @@
 import React from 'react'
 import estado from '../../data/estados.json'
-import { Row, Col, Input } from 'antd'
+import { Row, Col } from 'antd'
 import './style.css'
 
 export function Tabela() {
@@ -22,7 +22,7 @@ export function Tabela() {
           <Row style={celuda} wrap={false}>
              <Col span={4}><div>{mes}</div></Col>
              {estado.UF.map(valor => 
-                <Col span={4}><div><Input defaultValue={0} bordered={false}/></div></Col>
+                <Col span={4}><div>0</div></Col>
              )}
           </Row>
         )}
