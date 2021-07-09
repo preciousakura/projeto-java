@@ -1,16 +1,16 @@
 import React from 'react'
 import estado from '../../data/estados.json'
-import { Row, Col } from 'antd'
+import { Row, Col, Button } from 'antd'
 import './style.css'
 
 export function Tabela() {
-  const row_title = { background: '#ff8f90', padding: '2px 0'};
-  const celuda = { background: '#eaeaea', padding: '2px 0'};
+  const row_title = { background: 'rgb(240, 238, 238)', padding: '2px 0'};
+  const celuda = { background: 'D9DD6B', padding: '2px 0'};
   const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
 
   return(
     <>
-    <h1>Dados Covid-19</h1>
+    <h1>DADOS COVID-19</h1>
       <div className= 'tabela-content'>
         <Row wrap={false}>
           <Col span={4}><div style={row_title}>Mês/Estado</div></Col>
@@ -26,6 +26,9 @@ export function Tabela() {
              )}
           </Row>
         )}
+      </div>
+      <div className='alterar'>
+        <Button>ALTERAR DADOS</Button>
       </div>
       </>
   )}

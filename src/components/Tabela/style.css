@@ -1,10 +1,12 @@
 h1{
+  font-family: 'Libre Franklin Black';
   font-size: 2rem;
+  color: #c42a2a !important;
 }
 
 .tabela-content{
   width: 50rem;
-  background: white;
+  background: rgb(240, 238, 238);
   padding-bottom: 1rem;
   overflow-x: scroll;
 }
@@ -18,6 +20,17 @@ h1{
 }
 
 .tabela-content::-webkit-scrollbar-thumb {
-  background-color: #ff4d4f;    /* color of the scroll thumb */
+  background-color: #c42a2a;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.alterar button{
+  background: #c42a2a;
+  color: white;
+}
+
+.alterar button:hover{
+  background: white;
+  color:#c42a2a;
+  border: 1px solid #c42a2a;
 }

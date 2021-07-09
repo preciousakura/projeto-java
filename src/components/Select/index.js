@@ -8,19 +8,18 @@ export function Selects(){
 
     return(
         <div className='content-select'>
-        <Button>ALTERAR COLUNA</Button>
-        <Select defaultValue="TIPOS DE GRÁFICO">
+        <Select defaultValue="TIPO DE GRÁFICO">
             <Option value='Barra'>Barra</Option>
             <Option value='Pizza'>Pizza</Option>
             <Option value='Linha'>Linha</Option>
         </Select>
 
-        <Select defaultValue="ESTADOS">
+        <Select defaultValue="ESTADO">
             {estado.UF.map(estados=>
                 <Option value={estados.nome}>{estados.nome}</Option>
                 )}
         </Select>
+        <Button>GERAR GRÁFICO</Button>
         </div>
     )
-
 }

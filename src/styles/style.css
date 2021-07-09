@@ -1,4 +1,8 @@
 @font-face {
+    font-family: 'Libre Franklin Black';
+    src: url('../assets/fontes/libre.ttf');
+}
+@font-face {
     font-family: 'Roboto Slab';
     src: url('../assets/fontes/roboto.ttf');
 }
@@ -6,8 +10,10 @@ body{
     background-color: #E8F0F2;
     font-family: 'Roboto Slab';
     padding: 2rem;
-    background: url('../assets/background.jpg')no-repeat bottom;
-    background-size: cover;
+    background: url('../assets/fundo1.svg'), url('../assets/fundo2.svg');
+    background-position: top right, top left;
+    background-repeat: no-repeat, no-repeat;
+
 }
 .content{
     display: flex;
