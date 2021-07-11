@@ -3,4 +3,12 @@
     margin-top: 4rem;
     display: flex;
     gap: 1rem;
+    
 }
+
+.ant-select-selector:hover{
+    border: 1px solid #c42a2a;
+    border-color: #c42a2a;
+}
+
+  

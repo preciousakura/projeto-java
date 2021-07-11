@@ -12,6 +12,7 @@ export function Selects(){
             <Option value='Barra'>Barra</Option>
             <Option value='Pizza'>Pizza</Option>
             <Option value='Linha'>Linha</Option>
+            <Option value='Coluna'>Coluna</Option>
         </Select>
 
         <Select defaultValue="ESTADO">

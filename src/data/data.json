@@ -1,0 +1,440 @@
+{
+    "UF": [
+        {
+            "nome": "Acre", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 42,
+                "abril": 404,
+                "maio": 6.219,
+                "junho": 13.253,
+                "julho": 19.625,
+                "agosto": 24.647,
+                "setembro": 28.222,
+                "outubro": 30.796,
+                "novembro": 36.259,
+                "dezembro": 41.620
+            }
+        },
+        {   "nome": "Alagoas", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 18,
+                "abril": 1.045,
+                "maio": 10.288,
+                "junho": 35.962,
+                "julho": 59.725,
+                "agosto": 78.804,
+                "setembro": 86.879,
+                "outubro": 90.789,
+                "novembro": 94.984,
+                "dezembro": 104.818
+            }
+        },
+        {   "nome": "Amapá", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 10,
+                "abril": 1.080,
+                "maio": 9.602,
+                "junho": 28.492,
+                "julho": 36.468,
+                "agosto": 43.193,
+                "setembro": 48.254,
+                "outubro": 52.175,
+                "novembro": 59.131,
+                "dezembro": 68.201
+            }
+        },
+        {   "nome": "Amazonas",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 175,
+                "abril": 5.254,
+                "maio": 41.378,
+                "junho": 70.823,
+                "julho": 100.940,
+                "agosto": 120.296,
+                "setembro": 139.326,
+                "outubro": 161.683,
+                "novembro": 178.200,
+                "dezembro": 201.013
+            }
+        },
+        {   "nome": "Bahia",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 217,
+                "abril": 2.867,
+                "maio": 18.392,
+                "junho": 73.307,
+                "julho": 166.154,
+                "agosto": 256.727,
+                "setembro": 310.526,
+                "outubro": 353.157,
+                "novembro": 403.071,
+                "dezembro": 493.400
+            }
+        },
+        {   "nome": "Ceará",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 401,
+                "abril": 7.861,
+                "maio": 48.489,
+                "junho": 110.483,
+                "julho": 174.662,
+                "agosto": 214.953,
+                "setembro": 241.159,
+                "outubro": 274.185,
+                "novembro": 301.251,
+                "dezembro": 335.992
+            }
+        },
+        {   "nome": "Distrito Federal",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 305,
+                "abril": 1.342,
+                "maio": 8.807,
+                "junho": 43.800,
+                "julho": 93.689,
+                "agosto": 142.734,
+                "setembro": 168.630,
+                "outubro": 	186.994,
+                "novembro": 200.976,
+                "dezembro": 220.482
+            }
+        },
+        {   "nome": "Espírito Santo",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 97,
+                "abril": 2.688,
+                "maio": 13.690,
+                "junho": 46.893,
+                "julho": 83.292,
+                "agosto": 111.263,
+                "setembro": 131.490,
+                "outubro": 155.721,
+                "novembro": 190.001,
+                "dezembro": 248.251
+            }
+        },
+        {   "nome": "Goiás",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 65,
+                "abril": 781,
+                "maio": 3.726,
+                "junho": 24.910,
+                "julho": 69.249,
+                "agosto": 133.796,
+                "setembro": 211.240,
+                "outubro": 255.646,
+                "novembro": 279.892,
+                "dezembro": 309.110
+            }
+        },
+        {   "nome": "Maranhão", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 51,
+                "abril": 3.506,
+                "maio": 35.297,
+                "junho": 80.451,
+                "julho": 120.661,
+                "agosto": 151.615,
+                "setembro": 173.564,
+                "outubro": 185.827,
+                "novembro": 193.170,
+                "dezembro": 200.938
+            }
+        },
+        {   "nome": "Mato Grosso", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 25,
+                "abril": 302,
+                "maio": 2.485,
+                "junho": 16.304,
+                "julho": 52.078,
+                "agosto": 92.265,
+                "setembro": 124.060,
+                "outubro": 143.638,
+                "novembro": 158.982,
+                "dezembro": 180.451
+            }
+        },
+        {   "nome": "Mato Grosso do Sul",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 48,
+                "abril": 255,
+                "maio": 1.568,
+                "junho": 8.676,
+                "julho": 25.739,
+                "agosto": 49.820,
+                "setembro": 70.239,
+                "outubro": 82.618,
+                "novembro": 100.151,
+                "dezembro": 134.750
+            }
+        },
+        {   "nome": "Minas Gerais",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 275,
+                "abril": 1.827,
+                "maio": 10.464,
+                "junho": 45.001,
+                "julho": 127.106,
+                "agosto": 216.557,
+                "setembro": 295.169,
+                "outubro": 358.971,
+                "novembro": 416.335,
+                "dezembro": 542.909
+            }
+        },
+        {   "nome": "Pará",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 34,
+                "abril": 2.999,
+                "maio": 37.961,
+                "junho": 105.853,
+                "julho": 156.053,
+                "agosto": 200.985,
+                "setembro": 231.743,
+                "outubro": 253.080,
+                "novembro": 271.228,
+                "dezembro": 293.802
+            }
+        },
+        {   "nome": "Paraíba",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 18,
+                "abril": 926,
+                "maio": 13.162,
+                "junho": 43.957,
+                "julho": 81.794,
+                "agosto": 105.778,
+                "setembro": 121.267,
+                "outubro": 133.149,
+                "novembro": 154.253,
+                "dezembro": 166.484
+            }
+        },
+        {   "nome": "Paraná", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 185,
+                "abril": 1.423,
+                "maio": 4.752,
+                "junho": 22.877,
+                "julho": 76.112,
+                "agosto": 131.906,
+                "setembro": 178.898,
+                "outubro": 213.482,
+                "novembro": 280.084,
+                "dezembro": 416.566
+            }
+        },
+        {   "nome": "Pernambuco",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 87,
+                "abril": 6.876,
+                "maio": 34.450,
+                "junho": 58.858,
+                "julho": 95.858,
+                "agosto": 125.539,
+                "setembro": 147.171,
+                "outubro": 162.893,
+                "novembro": 182.406,
+                "dezembro": 222.166
+            }
+        },
+        {   "nome": "Piauí", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 18,
+                "abril": 600,
+                "maio": 5.119,
+                "junho": 22.059,
+                "julho": 52.458,
+                "agosto": 77.859,
+                "setembro": 96.849,
+                "outubro": 113.546,
+                "novembro": 127.686,
+                "dezembro": 143.179
+            }
+        },
+        {   "nome": "Rio de Janeiro", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 708,
+                "abril": 9.453,
+                "maio": 53.388,
+                "junho": 112.611,
+                "julho": 165.495,
+                "agosto": 223.631,
+                "setembro": 264.783,
+                "outubro": 309.977,
+                "novembro": 354.354,
+                "dezembro": 434.648
+            }
+        },
+        {   "nome": "Rio Grande do Norte",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 82,
+                "abril": 1.297,
+                "maio": 8.008,
+                "junho": 31.964,
+                "julho": 51.700,
+                "agosto": 62.204,
+                "setembro": 69.965,
+                "outubro": 81.518,
+                "novembro": 96.096,
+                "dezembro": 118.999
+            }
+        },
+        {   "nome": "Rio Grande do Sul", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 305,
+                "abril": 1.529,
+                "maio": 9.332,
+                "junho": 26.941,
+                "julho": 66.692,
+                "agosto": 125.816,
+                "setembro": 190.572,
+                "outubro": 247.576,
+                "novembro": 322.058,
+                "dezembro": 449.674
+            }
+        },
+        {   "nome": "Rondônia", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 9,
+                "abril": 502,
+                "maio": 4.942,
+                "junho": 21.251,
+                "julho": 38.992,
+                "agosto": 55.153,
+                "setembro": 65.911,
+                "outubro": 71.666,
+                "novembro": 80.538,
+                "dezembro": 95.729
+            }
+        },
+        {   "nome": "Roraima", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 16,
+                "abril": 519,
+                "maio": 3.692,
+                "junho": 15.153,
+                "julho": 32.723,
+                "agosto": 43.707,
+                "setembro": 50.681,
+                "outubro": 57.407,
+                "novembro": 63.572,
+                "dezembro": 68.710
+            }
+        },
+        {   "nome": "Santa Catarina", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 235,
+                "abril": 2.394,
+                "maio": 9.037,
+                "junho": 26.354,
+                "julho": 84.073,
+                "agosto": 177.777,
+                "setembro": 215.478,
+                "outubro": 258.940,
+                "novembro": 364.344,
+                "dezembro": 492.583
+            }
+        },
+        {   
+            "nome": "São Paulo",
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 2.339,
+                "abril": 28.698,
+                "maio": 109.698,
+                "junho": 281.380,
+                "julho": 542.304,
+                "agosto": 804.342,
+                "setembro": 985.628,
+                "outubro": 1.116127,
+                "novembro": 1.241653,
+                "dezembro": 1462297
+            }
+        },
+        {
+            "nome": "Sergipe", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 19,
+                "abril": 453,
+                "maio": 6.999,
+                "junho": 25.411,
+                "julho": 58.713,
+                "agosto": 72.528,
+                "setembro": 77.440,
+                "outubro": 84.326,
+                "novembro": 90.148,
+                "dezembro": 112.505
+            }
+        },
+        {
+            "nome": "Tocantins", 
+            "mes": {
+                "janeiro": 0,
+                "fevereiro": 0,
+                "marco": 12,
+                "abril": 164,
+                "maio": 4.176,
+                "junho": 11.222,
+                "julho": 25.346,
+                "agosto": 51.629,
+                "setembro": 68.060,
+                "outubro": 75.625,
+                "novembro": 81.972,
+                "dezembro": 90.536
+            }
+        }
+    ]
+}
