@@ -22,7 +22,15 @@ export function Grafico(){
         interactions: [{ type: 'pie-legend-active' }, { type: 'element-active' }],
     }
     
-    const config = {
+    const config_v = {
+        data: data,
+        padding: 'auto',
+        xField: 'mes',
+        yField: 'value',
+        xAxis: { tickCount: 5 },
+      };
+
+    const config_h = {
         data: data,
         padding: 'auto',
         xField: 'value',
@@ -30,14 +38,15 @@ export function Grafico(){
         xAxis: { tickCount: 5 },
       };
     
+    
     return(
         <div className='content-grafico'>
             <div className='grafico'>
                 {selectChart.toUpperCase() === "PIZZA" ? <Pie {...config_pizza}/> : 
-                 selectChart.toUpperCase() === "AREA" ?  <Area {...config} /> :
-                 selectChart.toUpperCase() === "BARRA" ?  <Bar {...config} /> :
-                 selectChart.toUpperCase() === "LINHA" ? <Line {...config} /> :
-                 selectChart.toUpperCase() === "COLUNA" ?  <Column {...config} /> : <></> }
+                 selectChart.toUpperCase() === "AREA" ?  <Area {...config_v} /> :
+                 selectChart.toUpperCase() === "BARRA" ?  <Bar {...config_h} /> :
+                 selectChart.toUpperCase() === "LINHA" ? <Line {...config_v} /> :
+                 selectChart.toUpperCase() === "COLUNA" ?  <Column {...config_v} /> : <></> }
             </div>
             <Row>
                 <Col>
