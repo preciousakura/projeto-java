@@ -24,7 +24,7 @@ export function Tabela() {
           <Row style={index%2 === 0 ? cedulaPar: cedulaImpar} wrap={false}>
              <Col span={4}><div>{mes}</div></Col>
              {tabela.UF.map(valor => 
-                <Col span={4}><Input bordered={false} defaultValue={String(valor.mes[mes])} /></Col>
+                <Col span={4}><Input bordered={false} defaultValue={0} /></Col>
              )}
           </Row>
         )}

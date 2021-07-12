@@ -1,26 +1,15 @@
-import React from 'react'
-import { Column, Line, Pie } from '@ant-design/charts';
+import React, {useContext} from 'react'
+import { Pie, Area, Column, Bar, Line } from '@ant-design/charts';
 import { Row,Col } from 'antd'
+import tabela from '../../data/data.json'
+import { UtilContext } from '../../utils/context'
 import './style.css'
 
 export function Grafico(){
+    const { selectEstado, selectChart } = useContext(UtilContext)
 
-    const data = [
-        {mes: "Janeiro", value: 12},
-        {mes: "Fevereiro", value: 12},
-        {mes: "Março", value: 1},
-        {mes: "Abril", value: 45},
-        {mes: "Maio", value: 12},
-        {mes: "Junho", value: 20},
-        {mes: "Julho", value: 50},
-        {mes: "Agosto", value: 120},
-        {mes: "Setembro", value: 12},
-        {mes: "Outubro", value: 51},
-        {mes: "Novembro", value: 36},
-        {mes: "Dezembro", value: 86},
-    ]
-    
-    var config = {
+    const data = tabela.UF.filter(estado => estado.nome.toUpperCase() === selectEstado.toUpperCase())[0].meses
+    const config_pizza = {
         appendPadding: 10,
         data: data,
         angleField: 'value',
@@ -31,28 +20,25 @@ export function Grafico(){
           content: '{name} {percentage}',
         },
         interactions: [{ type: 'pie-legend-active' }, { type: 'element-active' }],
-      };
-
-    // const config = {
-    //     data,
-    //     height: 400,
-    //     xField: 'mes',
-    //     yField: 'value',
-    //     point: {
-    //       size: 5,
-    //       shape: 'diamond',
-    //     },
-    //   };
-      
-    const graficos = {
-        Line: <Line {...config} />,
-        Coluna: <Column {...config} />,
-        Pizza: <Pie {...config} />
     }
+    
+    const config = {
+        data: data,
+        padding: 'auto',
+        xField: 'value',
+        yField: 'mes',
+        xAxis: { tickCount: 5 },
+      };
     
     return(
         <div className='content-grafico'>
-            <div className='grafico'></div>
+            <div className='grafico'>
+                {selectChart.toUpperCase() === "PIZZA" ? <Pie {...config_pizza}/> : 
+                 selectChart.toUpperCase() === "AREA" ?  <Area {...config} /> :
+                 selectChart.toUpperCase() === "BARRA" ?  <Bar {...config} /> :
+                 selectChart.toUpperCase() === "LINHA" ? <Line {...config} /> :
+                 selectChart.toUpperCase() === "COLUNA" ?  <Column {...config} /> : <></> }
+            </div>
             <Row>
                 <Col>
                     <h4>Média:</h4>

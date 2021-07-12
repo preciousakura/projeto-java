@@ -1,0 +1,9 @@
+.content{
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  justify-content: center;
+}
+.content-left{
+  text-align: center;
+}
