@@ -6,7 +6,7 @@ import tabela from '../../data/data.json'
 
 export function Tabela() {
   const row_title = { background: '#8D2828', padding: '2px 0', color: 'white'};
-  const meses = ["janeiro", "fevereiro", "marco", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+  const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
   const cedulaPar = { background: 'white', padding: '2px 0'};
   const cedulaImpar = { background: '#ECEFA4', padding: '2px 0'};
 
@@ -24,7 +24,7 @@ export function Tabela() {
           <Row style={index%2 === 0 ? cedulaPar: cedulaImpar} wrap={false}>
              <Col span={4}><div>{mes}</div></Col>
              {tabela.UF.map(valor => 
-                <Col span={4}><Input bordered={false} defaultValue={0} /></Col>
+                <Col span={4}><Input bordered={false} defaultValue={valor.meses.filter(month=> month.mes === mes)[0].value} /></Col>
              )}
           </Row>
         )}

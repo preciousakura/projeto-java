@@ -1,14 +1,14 @@
 import React, { createContext, useState } from 'react';
 
 export const UtilContext = createContext({
-  selectEstado: 'Acre',
+  selectEstado: 'Ceará',
   setselectEstado() {},
-  selectChart: 'Acre',
+  selectChart: 'BARRA',
   setSelectChart() {},
 });
 
 export const ProviderUtil = ({children}) => {
-  const [selectEstado, setselectEstado] = useState('Acre');
+  const [selectEstado, setselectEstado] = useState('Ceará');
   const [selectChart, setSelectChart] = useState('BARRA');
 
   const contextValues = {

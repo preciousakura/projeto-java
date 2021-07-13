@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Select, Button} from 'antd';
+import {Select} from 'antd';
 import estado from '../../data/estados.json';
 import './style.css'
 import {UtilContext} from '../../utils/context'
