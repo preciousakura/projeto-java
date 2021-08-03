@@ -15,7 +15,7 @@ export function Grafico(){
         angleField: 'value',
         colorField: 'mes',
         radius: 0.8,
-        color: ['#8D2828', '#D54C4C', '#ECEFA4', '#D9DD6B'],
+        color: ['#008192', '#ffd15b', '#615284', '#A3D2CA'],
         label: {
           type: 'outer',
           content: '{name} {percentage}',
@@ -30,18 +30,18 @@ export function Grafico(){
         yField: 'value',
         xAxis: { tickCount: 5 },
         columnStyle: {
-            fill: '#8D2828',
+            fill: '#202639',
             lineWidth: 1,
             cursor: 'pointer'
         },
         lineStyle: {
-            stroke: '#8D2828',
+            stroke: '#202639',
             lineWidth: 1,
             cursor: 'pointer'
         },
         areaStyle: {
-            fill: 'l(270) 0:#ffffff 0.5:#D54C4C 1:#8D2828',
-            stroke: '#8D2828',
+            fill: 'l(270) 0:#ffffff 0.5:#008192 1:#254163',
+            stroke: '#202639',
             cursor: 'pointer',
             lineWidth: 1
         },
@@ -55,7 +55,7 @@ export function Grafico(){
         yField: 'mes',
         xAxis: { tickCount: 5 },
         barStyle: {
-            fill: '#8D2828',
+            fill: '#202639',
             lineWidth: 1,
             cursor: 'pointer'
         }
@@ -72,18 +72,6 @@ export function Grafico(){
                  selectChart.toUpperCase() === "LINHA" ? <Line {...config_v} /> :
                  selectChart.toUpperCase() === "COLUNA" ?  <Column {...config_v} /> : <></> }
             </div>
-            <Row>
-                <Col>
-                    <h4>Média:</h4>
-                    <h4>Moda:</h4>
-                    <h4>Máximo da Coluna:</h4>
-                </Col>
-                <Col offset={5}>
-                    <h4>Desvio Padrão:</h4>
-                    <h4>Variância:</h4>
-                    <h4>Mínimo da Coluna:</h4>
-                </Col>
-            </Row>
         </div>
     )
 }

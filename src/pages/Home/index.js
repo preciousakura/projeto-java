@@ -6,7 +6,13 @@ export function Home() {
   return(
     <div className='content'>
       <div className='content-left'><Tabela/></div>
-      <div className='content-right'><Selects/><Grafico/></div>
+      <div className='content-right'>
+        <div>
+          <Selects/><Grafico/>
+        </div>
+        <div>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,11 +1,12 @@
 h1{
-  font-family: 'Libre Franklin Black';
+  font-family: 'Bebas Neue Regular';
   font-size: 2rem;
-  color: #c42a2a !important;
+  color: #202639 !important;
 }
 
 .tabela-content{
-  width: 50rem;
+  width: 100%;
+  max-width: 70rem;
   padding-bottom: 1rem;
   overflow-x: scroll;
 }
@@ -15,23 +16,25 @@ h1{
 }
 
 .tabela-content::-webkit-scrollbar-track {
-  background: white;        /* color of the tracking area */
+  background: transparent;        /* color of the tracking area */
 }
 
 .tabela-content::-webkit-scrollbar-thumb {
-  background-color: #c42a2a;    /* color of the scroll thumb */
+  background-color: #202639;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
 }
 
-.alterar button{
-  background: #c42a2a;
-  color: white;
+input.ant-input.ant-input-disabled.ant-input-borderless {
+  color: #008192;
+  text-align: center;
+  cursor: default;
+  font-weight: 400;
+}
+input.ant-input {
+  text-align: center;
+  font-weight: 700;
 }
 
-.alterar button:hover{
-  background: white;
-  color:#c42a2a;
-  border: 1px solid #c42a2a;
+.ant-row.ant-row-no-wrap {
+  gap: .3rem;
 }
-
-

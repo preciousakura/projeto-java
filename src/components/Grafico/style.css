@@ -1,6 +1,6 @@
 .content-grafico{
     background-color: white;
-    border: 1px solid #c42a2a;
+    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);;
     padding: 1rem;
     border-radius: 1rem;
     width: 33rem;
