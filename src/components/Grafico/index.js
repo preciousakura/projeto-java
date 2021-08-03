@@ -15,7 +15,7 @@ export function Grafico(){
         angleField: 'value',
         colorField: 'mes',
         radius: 0.8,
-        color: ['#008192', '#ffd15b', '#615284', '#A3D2CA'],
+        color: ['#008192', '#ffd15b', '#615284', '#A3D2CA'], 
         label: {
           type: 'outer',
           content: '{name} {percentage}',
@@ -30,22 +30,22 @@ export function Grafico(){
         yField: 'value',
         xAxis: { tickCount: 5 },
         columnStyle: {
-            fill: '#202639',
+            fill: '#ffd15b',
             lineWidth: 1,
             cursor: 'pointer'
         },
         lineStyle: {
-            stroke: '#202639',
+            stroke: '#615284',
             lineWidth: 1,
             cursor: 'pointer'
         },
         areaStyle: {
-            fill: 'l(270) 0:#ffffff 0.5:#008192 1:#254163',
-            stroke: '#202639',
+            fill: 'l(270) 0:#615284 0.5:#615284 1:#615284',
+            stroke: '#615284',
             cursor: 'pointer',
             lineWidth: 1
         },
-        color: ['#8D2828']
+        color: ['#615284']
       };
 
     const config_h = {
@@ -55,7 +55,7 @@ export function Grafico(){
         yField: 'mes',
         xAxis: { tickCount: 5 },
         barStyle: {
-            fill: '#202639',
+            fill: '#A3D2CA',
             lineWidth: 1,
             cursor: 'pointer'
         }

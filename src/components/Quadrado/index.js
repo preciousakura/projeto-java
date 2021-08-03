@@ -4,7 +4,7 @@ import './style.css'
 export function Quadrado({ nome, number }) {
     return(
     <>
-      <div className='nome-quadrado'>
+      <div className='quadrado'>
           <h1>{number}</h1>
           <p>{nome}</p>
       </div>

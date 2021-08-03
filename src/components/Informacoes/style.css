@@ -1,0 +1,13 @@
+.info-quadrados {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.quadrado-title h1 {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0;
+}

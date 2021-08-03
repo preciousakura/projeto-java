@@ -1,0 +1,11 @@
+.content-select{
+    display: flex;
+    gap: 1rem;
+}
+
+.ant-select-selector:hover{
+    border: 1px solid #202639;
+    border-color: #202639;
+}
+
+  

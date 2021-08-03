@@ -8,7 +8,7 @@ export const UtilContext = createContext({
 });
 
 export const ProviderUtil = ({children}) => {
-  const [selectEstado, setselectEstado] = useState('Ceará');
+  const [selectEstado, setselectEstado] = useState('Acre');
   const [selectChart, setSelectChart] = useState('BARRA');
 
   const contextValues = {
