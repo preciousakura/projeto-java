@@ -1,18 +1,19 @@
-h1{
-  font-family: 'Bebas Neue Regular';
-  font-size: 2rem;
-  color: #202639 !important;
+.tabela {
+  display: flex;
+  gap: .3rem;
+}
+
+.tabela {
+  width: 100%;
 }
 
 .tabela-content{
-  width: 100%;
-  max-width: 70rem;
-  padding-bottom: 1rem;
+  padding-bottom: .2rem;
   overflow-x: scroll;
 }
 
 .tabela-content::-webkit-scrollbar {
-  height: 8px;               /* width of the entire scrollbar */
+  height: 5px;               /* width of the entire scrollbar */
 }
 
 .tabela-content::-webkit-scrollbar-track {
@@ -23,16 +24,28 @@ h1{
   background-color: #202639;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
 }
+.tabela-mes input.ant-input.ant-input-disabled.ant-input-borderless {
+  color: white;
+  font-weight: 700;
+  font-family: Nunito;
+  text-transform: uppercase;
+  cursor: text;
+}
 
-input.ant-input.ant-input-disabled.ant-input-borderless {
+.tabela-content input.ant-input.ant-input-disabled.ant-input-borderless {
   color: #008192;
   text-align: center;
-  cursor: default;
   font-weight: 400;
+  cursor: text;
 }
+
 input.ant-input {
   text-align: center;
   font-weight: 700;
+}
+
+.ant-col-4 {
+  max-width: 100% !important;
 }
 
 .ant-row.ant-row-no-wrap {

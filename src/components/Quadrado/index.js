@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
 
-export default function Quadrado(nome, number) {
+export function Quadrado({ nome, number }) {
     return(
     <>
       <div className='nome-quadrado'>

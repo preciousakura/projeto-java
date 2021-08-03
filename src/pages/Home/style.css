@@ -4,9 +4,68 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
   justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 7rem;
+  
 }
 .content-left{
   text-align: center;
+  height: 100%;
+  align-items: center;
+  display: flex;  
+  justify-content: center
+}
+
+.header {
+  width: 100%;
+  margin-top: 3rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700 !important;
+  font-size: 20px;
+  margin: 0 !important;
+  text-align: left;
+  color: #202639 !important;
+  
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-align: left;
+  color: #202639 !important;
+}
+
+.header .menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header .menu .title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-align: left;
+  font-style: italic;
+  cursor: pointer;
+  color: #202639 !important;
+}
+
+.header .menu .title:nth-child(2) {
+  cursor: default;
+}
+
+.header .menu .title:hover:not(.title:nth-child(2)) {
+  border-bottom: 2px solid #202639;
 }

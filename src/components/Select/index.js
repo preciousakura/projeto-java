@@ -10,15 +10,15 @@ export function Selects() {
     const {  setselectEstado, setSelectChart } = useContext(UtilContext)
     return(
         <div className='content-select'>
-        <Select style={style} defaultValue="TIPO DE GRÁFICO" onChange={(e) => setSelectChart(e)}>
+        {/* <Select style={style} onChange={(e) => setSelectChart(e)}>
             <Option value='Barra'>Barra</Option>
             <Option value='Area'>Área</Option>
             <Option value='Pizza'>Pizza</Option>
             <Option value='Linha'>Linha</Option>
             <Option value='Coluna'>Coluna</Option>
-        </Select>
+        </Select> */}
 
-        <Select style={style} defaultValue="ESTADO" onChange={(e) => setselectEstado(e)}> 
+        <Select showSearch style={style} placeholder="Busque um estado" onChange={(e) => setselectEstado(e)}> 
             {estado.UF.map(estados=>
                 <Option value={estados.nome}>{estados.nome}</Option>
                 )}
