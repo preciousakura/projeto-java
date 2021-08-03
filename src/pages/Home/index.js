@@ -1,11 +1,15 @@
-import React from 'react'
-import { Tabela, Selects, Grafico, Informacoes, SelectGrafico } from '../../components'
+import React, { useContext } from 'react'
+import { Tabela, Selects, Modal } from '../../components'
 import { AiOutlineBorderlessTable } from "react-icons/ai";
+import { UtilContext } from '../../utils/context'
 import './style.css'
 
 export function Home() {
+
+  const { setModal, modal } = useContext(UtilContext)
+  
   return(
-  <>
+  <div className="content-max">
     <div className='content'>
       <div className='header'>
         <div>
@@ -15,20 +19,13 @@ export function Home() {
         <div class="menu">
           <span className="title">CARREGAR PLANILHA</span>
           <span className="title">/</span>
-          <span className="title">INFORMAÇÕES DETALHADAS</span>
+          <span className="title" onClick={()=>setModal(!modal)}>INFORMAÇÕES DETALHADAS</span>
           <Selects/>
         </div>
       </div>
       <div className='content-left'><Tabela/></div>
     </div>
-    
-    <div className='modal'>
-      <div>
-        <div class="title-grafico"><h2>Selecione o tipo de gráfico: </h2><SelectGrafico/></div>
-        <Grafico/>
-      </div>
-      <div><Informacoes/></div>
-    </div>
-  </>
+    {modal && (<Modal />)}
+  </div>
   )
 }

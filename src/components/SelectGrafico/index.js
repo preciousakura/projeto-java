@@ -6,10 +6,10 @@ const {Option} = Select
 
 export function SelectGrafico() {
     const style = {minWidth: '150px'}
-    const {  setSelectChart } = useContext(UtilContext)
+    const {  selectChart, setSelectChart } = useContext(UtilContext)
     return(
         <div className='content-select'>
-        {<Select defaultValue="Barra" style={style} onChange={(e) => setSelectChart(e)}>
+        {<Select defaultValue={selectChart} style={style} onChange={(e) => setSelectChart(e)}>
             <Option value='Barra'>Barra</Option>
             <Option value='Area'>Área</Option>
             <Option value='Pizza'>Pizza</Option>

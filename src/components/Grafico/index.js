@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import { Pie, Area, Column, Bar, Line } from '@ant-design/charts';
-import { Row,Col } from 'antd'
 import tabela from '../../data/data.json'
 import { UtilContext } from '../../utils/context'
 import './style.css'
