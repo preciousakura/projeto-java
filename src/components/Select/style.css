@@ -9,3 +9,9 @@
 }
 
   
+@media only screen and (max-width: 774px) {
+    .ant-select, .content-select {
+      width: 100%;
+    }
+}
+  

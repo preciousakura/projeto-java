@@ -2,15 +2,16 @@
 .content-modal {
   display: flex;
   align-items: center;
-  height: 100%;
   width: 100%;
   position: absolute;
   background: #ffffff8c;
   top: 0;
+  bottom: 0;
 }
 
 .modal {
   position: relative;
+  padding: 4rem 0;
   
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +21,6 @@
   
   background: #a8d4cde6;
   width: 95%;
-  height: 91%;
   margin: 0 auto;
 }
 
@@ -50,4 +50,10 @@
 .close svg {
   font-size: 1.6rem;
   color: #202639;
+}
+
+@media only screen and (max-width: 1254px) {
+  .content-modal {
+    bottom: auto;
+  }
 }
