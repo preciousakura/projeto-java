@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const UtilContext = createContext({
   selectEstado: 'Ceará',
@@ -7,12 +7,24 @@ export const UtilContext = createContext({
   setSelectChart() {},
   modal: false,
   setModal() {},
+  width: window.innerWidth
 });
 
 export const ProviderUtil = ({children}) => {
   const [selectEstado, setselectEstado] = useState('Acre');
   const [selectChart, setSelectChart] = useState('BARRA');
   const [modal, setModal] = useState(false);
+  
+  const [width, setWidth] = React.useState(window.innerWidth);
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   const contextValues = {
     selectEstado,
@@ -20,7 +32,8 @@ export const ProviderUtil = ({children}) => {
     selectChart,
     setSelectChart,
     modal,
-    setModal
+    setModal, 
+    width,
   };
 
   return (

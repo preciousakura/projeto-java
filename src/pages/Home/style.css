@@ -8,7 +8,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   margin: 0 auto;
   padding: 0 7rem;
@@ -17,9 +16,6 @@
 .content-left{
   text-align: center;
   height: 100%;
-  align-items: center;
-  display: flex;  
-  justify-content: center
 }
 
 .header {
