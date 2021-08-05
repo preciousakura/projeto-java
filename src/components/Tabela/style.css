@@ -32,6 +32,43 @@
   cursor: text;
 }
 
+@media (max-width: 950px) {
+  .tabela-mes{
+    width:100px;
+  }
+  .tabela-content{
+    width: 600px;
+  }
+}
+
+@media (max-width: 750px) {
+  .tabela-mes{
+    width:50px;
+  }
+  .tabela-content{
+    width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabela-mes{
+    width:40px;
+  }
+  .tabela-mes input {
+    font-size: 10px; 
+  }
+  .tabela-content{
+    width: 300px;
+  }
+ .tabela-content div > div > div {
+   font-size: 10px !important;
+ }
+ .ant-input  {
+   font-size: 10px !important;
+ }
+}
+
+
 .tabela-content input.ant-input.ant-input-disabled.ant-input-borderless {
   color: #008192;
   text-align: center;
@@ -46,7 +83,7 @@ input.ant-input {
 
 .ant-col-4 {
   max-width: 100% !important;
-}
+} 
 
 .ant-row.ant-row-no-wrap {
   gap: .3rem;
