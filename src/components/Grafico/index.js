@@ -58,7 +58,7 @@ export function Grafico(){
             lineWidth: 1,
             cursor: 'pointer'
         }
-        
+
       };
     
     

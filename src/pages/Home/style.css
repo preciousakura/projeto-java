@@ -21,11 +21,9 @@
 .header {
   width: 100%;
   margin: 3rem 0;
-  
+  margin-top: 10px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  
   flex-flow: wrap;
   
 }
@@ -78,6 +76,7 @@
 @media only screen and (max-width: 774px) {
   .header {
     justify-content: center;
+    flex-direction: column;
   }
   .header .menu {
     justify-content: center;
@@ -98,8 +97,11 @@
   }
 }
 
+
+/* 
 @media only screen and (max-width: 450px) {
   .title:not(.title:nth-child(3)) {
     display: none;
   }
 }
+*/
