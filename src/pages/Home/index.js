@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { TabelaResponsiva, Tabela, Selects, Modal } from '../../components'
 import { AiOutlineBorderlessTable } from "react-icons/ai";
+import { Tooltip } from 'antd'
 import { UtilContext } from '../../utils/context'
-import { Footer } from '../../components/Footer'
+import { MdCloudDownload, MdCloudUpload } from "react-icons/md";
 import './style.css'
 
 export function Home() {
@@ -23,24 +24,30 @@ export function Home() {
             <Selects/>
           </div>
         </div>
-          <div className='content-left'>
-            {width > 500 ? <Tabela /> : <TabelaResponsiva />}
+        {width > 500 && (
+          <div className="b-icons">
+            <span className='title'>
+              <Tooltip color={'#202639'} placement="top" title="Carregar Arquivo">
+                <MdCloudUpload/>
+              </Tooltip>
+            </span>
+            <span className='title'>
+              <Tooltip color={'#202639'} placement="top" title="Baixar Arquivo">
+                <MdCloudDownload/>
+              </Tooltip>
+            </span>
           </div>
-          <div className="header">
-            <div className="menu">
-              <span className='title' style={{fontSize: "1.125rem"}}>Editar</span>
-            </div>
-            <div className="menu">
-              <span className='title' style={{ fontSize: "1.125rem" }}>Carregar</span>
-              <span className='title' style={{ fontSize: "1.125rem" }}>/</span>
-              <span className='title' style={{fontSize: "1.125rem"}}>Salvar</span>
-            </div>
+        )}
+        <div className='content-left'>
+          {width > 500 ? <Tabela /> : <TabelaResponsiva />}
+        </div>
+        {width > 500 && (
+          <div className="editar">
+            <span className='title'>Editar</span>
           </div>
+        )}
       </div>
       {modal && (<Modal />)}
-    </div>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width:"100%"}}>
-      <Footer />
     </div>
   </>
   )

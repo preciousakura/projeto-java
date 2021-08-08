@@ -20,7 +20,7 @@
 
 .header {
   width: 100%;
-  margin: 3rem 0;
+  margin: 1rem 0;
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
@@ -57,20 +57,50 @@
 }
 
 .header .menu .title {
-  font-family: 'Open Sans', sans-serif;
+  color: #202639;
+  text-transform: uppercase;
   font-weight: 600;
-  text-align: left;
+  font-size: .8rem;
   cursor: pointer;
-  color: #202639 !important;
+  border-radius: 3px;
+  background: #c0dbde;
+  padding: .3rem;
+  font-family: "Open Sans";
 }
 
-.header .menu .title:nth-child(2) {
-  cursor: default;
+.b-icons {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: wrap;
+  gap: .5rem;
+  margin-bottom: 1rem;
 }
 
-.header .menu .title:hover:not(.title:nth-child(2)) {
-  border-bottom: 2px solid #202639;
+.b-icons svg {
+  color: #008192;
+  font-size: 26px;
+  cursor: pointer;
+}
 
+.header .menu .title:hover, .b-icons svg:hover, .editar span:hover  {
+  opacity: .8;
+}
+
+.editar {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.editar span {
+  color: #202639;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .8rem;
+  cursor: pointer;
+  border-radius: 3px;
+  background: #c0dbde;
+  padding: .3rem;
+  font-family: "Open Sans";
 }
 
 @media only screen and (max-width: 774px) {
