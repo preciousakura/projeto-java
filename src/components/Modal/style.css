@@ -58,3 +58,19 @@
     bottom: auto;
   }
 }
+
+@media only screen and (max-width: 700px) {
+    .comp{
+        width: 100%;
+        
+    }
+    .modal{
+      padding: 4rem 2rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .title-grafico{
+      flex-direction: column;  
+    }
+}

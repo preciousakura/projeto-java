@@ -35,7 +35,6 @@
   margin: 0 !important;
   text-align: left;
   color: #202639 !important;
-  
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -77,9 +76,13 @@
 }
 
 .b-icons svg {
-  color: #008192;
-  font-size: 26px;
+  color: #202639;
+  font-size: 30px;
   cursor: pointer;
+  border: 2px transparent;
+  border-radius: 3px; 
+  background-color: #c0dbde;
+  padding: 5px; 
 }
 
 .header .menu .title:hover, .b-icons svg:hover, .editar span:hover  {

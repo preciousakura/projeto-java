@@ -3,7 +3,7 @@ import { TabelaResponsiva, Tabela, Selects, Modal } from '../../components'
 import { AiOutlineBorderlessTable } from "react-icons/ai";
 import { Tooltip } from 'antd'
 import { UtilContext } from '../../utils/context'
-import { MdCloudDownload, MdCloudUpload } from "react-icons/md";
+import { AiOutlineUpload, AiOutlineDownload } from "react-icons/ai";
 import './style.css'
 
 export function Home() {
@@ -28,12 +28,12 @@ export function Home() {
           <div className="b-icons">
             <span className='title'>
               <Tooltip color={'#202639'} placement="top" title="Carregar Arquivo">
-                <MdCloudUpload/>
+                <AiOutlineUpload/>
               </Tooltip>
             </span>
             <span className='title'>
               <Tooltip color={'#202639'} placement="top" title="Baixar Arquivo">
-                <MdCloudDownload/>
+                <AiOutlineDownload/>
               </Tooltip>
             </span>
           </div>

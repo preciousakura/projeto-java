@@ -15,11 +15,11 @@ export function Modal() {
             <AiFillCloseCircle onClick={()=>setModal(!modal)}/>
           </Tooltip>
         </div>
-        <div>
+        <div className="comp"> 
           <div class="title-grafico"><h2>Selecione o tipo de gráfico: </h2><SelectGrafico/></div>
           <Grafico/>
         </div>
-        <div><Informacoes/></div>
+        <div className="comp"><Informacoes/></div>
       </div>
     </div>
     )
