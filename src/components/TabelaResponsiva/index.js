@@ -70,7 +70,7 @@ export function TabelaResponsiva() {
              {/* <Col span={3}><div style={row_title}>{mes}</div></Col> */}
              {tabela.UF.map((valor, index) => 
                 <Col ref={violationRef[index]} style={valor.nome.toUpperCase() !== selectEstado.toUpperCase() ? col_Unselect : col_select} span={3}>
-                  <Input disabled={valor.nome.toUpperCase() !== selectEstado.toUpperCase()} bordered={false} defaultValue={(valor.meses.filter(month=> month.mes === mes)[0].value).toLocaleString('pt-BR')} />
+                  <Input disabled={true} bordered={false} defaultValue={(valor.meses.filter(month=> month.mes === mes)[0].value).toLocaleString('pt-BR')} />
                 </Col>
              )}
           </Row>

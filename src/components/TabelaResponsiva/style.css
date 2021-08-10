@@ -37,9 +37,9 @@
 }
 
 .responsiva-tabela-content input.ant-input.ant-input-disabled.ant-input-borderless {
-  color: #008192;
+  color: #202639;
   text-align: center;
-  font-weight: 400;
+  font-weight: 700;
   cursor: text;
 }
 
