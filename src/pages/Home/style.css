@@ -1,0 +1,140 @@
+.content-max {
+  position: relative;
+  height: 100%;
+}
+
+.content{
+  max-width: 1600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 7rem;
+}
+
+.content-left{
+  text-align: center;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  margin: 1rem 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+  
+}
+
+.header h1{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700 !important;
+  font-size: 20px;
+  margin: 0 !important;
+  text-align: left;
+  color: #202639 !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
+  color: #254163 !important;
+}
+
+.header .menu {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  gap: 1rem;
+}
+
+.header .menu .title {
+  color: #202639;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .8rem;
+  cursor: pointer;
+  border-radius: 3px;
+  background: #c0dbde;
+  padding: .3rem;
+  font-family: "Open Sans";
+}
+
+.b-icons {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: wrap;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+
+.b-icons svg {
+  color: #202639;
+  font-size: 30px;
+  cursor: pointer;
+  border: 2px transparent;
+  border-radius: 3px; 
+  background-color: #c0dbde;
+  padding: 5px; 
+}
+
+.header .menu .title:hover, .b-icons svg:hover, .editar span:hover  {
+  opacity: .8;
+}
+
+.editar {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.editar span {
+  color: #202639;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .8rem;
+  cursor: pointer;
+  border-radius: 3px;
+  background: #c0dbde;
+  padding: .3rem;
+  font-family: "Open Sans";
+}
+
+@media only screen and (max-width: 774px) {
+  .header {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .header .menu {
+    justify-content: center;
+  }
+  
+  .header p {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .header > div h1 {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .content {
+    padding: 0 2rem;
+  }
+}
+
+
+/* 
+@media only screen and (max-width: 450px) {
+  .title:not(.title:nth-child(3)) {
+    display: none;
+  }
+}
+*/

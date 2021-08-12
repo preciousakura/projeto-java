@@ -1,0 +1,17 @@
+.content-select{
+    display: flex;
+    gap: 1rem;
+}
+
+.ant-select-selector:hover{
+    border: 1px solid #c42a2a;
+    border-color: #c42a2a;
+}
+
+  
+@media only screen and (max-width: 774px) {
+    .ant-select, .content-select {
+      width: 100%;
+    }
+}
+  

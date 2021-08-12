@@ -1,0 +1,77 @@
+.resposivo {
+  display: flex;
+  flex-direction: column;
+}
+.responsiva-tabela {
+  display: flex;
+  gap: .3rem;
+}
+
+.responsiva-tabela {
+  width: 100%;
+}
+
+.responsiva-tabela-content{
+  overflow: hidden;
+}
+
+.responsiva-tabela-content::-webkit-scrollbar {
+  height: 5px;               /* width of the entire scrollbar */
+}
+
+.responsiva-tabela-content::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.responsiva-tabela-content::-webkit-scrollbar-thumb {
+  background-color: #202639;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.responsiva-tabela-mes input.ant-input.ant-input-disabled.ant-input-borderless {
+  color: white;
+  font-weight: 700;
+  font-family: Nunito;
+  text-transform: uppercase;
+  cursor: text;
+}
+
+.responsiva-tabela-content input.ant-input.ant-input-disabled.ant-input-borderless {
+  color: #202639;
+  text-align: center;
+  font-weight: 700;
+  cursor: text;
+}
+
+input.ant-input {
+  text-align: center;
+  font-weight: 700;
+}
+
+.ant-row.ant-row-no-wrap {
+  gap: .3rem;
+}
+
+.responsiva-tabela .ant-col {
+  width: 130px !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+.botoes {
+  margin-top: 1rem;
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+.botoes svg {
+  color: white;
+  background: #008192;
+  font-size: 26px;
+  cursor: pointer;
+  margin-left: .5rem;
+}
+
+.botoes svg:hover {
+  opacity: .8;
+}

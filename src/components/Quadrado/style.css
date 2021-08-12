@@ -1,0 +1,26 @@
+.quadrado{
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: 150px;
+    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quadrado h1{
+    font-weight: 700 !important;
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #202639;
+    margin-bottom: 0 !important;
+}
+
+.quadrado p{
+    font-weight: 600 !important;
+    font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #202639;
+    margin-bottom: 0 !important;
+}

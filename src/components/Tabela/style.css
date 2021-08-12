@@ -1,0 +1,76 @@
+.tabela {
+  display: flex;
+  gap: .3rem;
+}
+
+.tabela {
+  width: 100%;
+}
+
+.tabela-content{
+  padding-bottom: .2rem;
+  overflow-x: scroll;
+}
+
+.tabela-content::-webkit-scrollbar {
+  height: 5px;               /* width of the entire scrollbar */
+}
+
+.tabela-content::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.tabela-content::-webkit-scrollbar-thumb {
+  background-color: #202639;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+.tabela-mes input.ant-input.ant-input-disabled.ant-input-borderless {
+  color: white;
+  font-weight: 700;
+  font-family: Nunito;
+  text-transform: uppercase;
+  cursor: text;
+}
+
+@media (max-width: 950px) {
+  .ant-col {
+    flex: 0 0 130px !important
+  }
+}
+
+
+@media (max-width: 480px) {
+  .tabela-mes input {
+    font-size: 10px; 
+  }
+
+ .tabela-content div > div > div {
+   font-size: 10px !important;
+ }
+ .ant-input  {
+   font-size: 10px !important;
+ }
+}
+
+
+.tabela-content input.ant-input.ant-input-disabled.ant-input-borderless {
+  color: #008192;
+  text-align: center;
+  font-weight: 400;
+  cursor: text;
+}
+
+input.ant-input {
+  text-align: center;
+  font-weight: 700;
+}
+
+.ant-row.ant-row-no-wrap {
+  gap: .3rem;
+}
+
+.ant-col {
+  width: 130px !important;
+  flex: 0 0 130px !important;
+  max-width: 314px !important;
+}
