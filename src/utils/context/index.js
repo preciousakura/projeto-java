@@ -1,17 +1,23 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 export const UtilContext = createContext({
-  selectEstado: 'Ceará',
+  selectEstado: ' ',
   setselectEstado() {},
   selectChart: 'BARRA',
   setSelectChart() {},
   modal: false,
   setModal() {},
-  width: window.innerWidth
+  width: window.innerWidth,
+  dados: undefined,
+  setDados() {},
+  dado: undefined,
+  setDado() {},
 });
 
 export const ProviderUtil = ({children}) => {
-  const [selectEstado, setselectEstado] = useState('Acre');
+  const [dados, setDados] = useState();
+  const [dado, setDado] = useState();
+  const [selectEstado, setselectEstado] = useState('');
   const [selectChart, setSelectChart] = useState('BARRA');
   const [modal, setModal] = useState(false);
   
@@ -34,6 +40,10 @@ export const ProviderUtil = ({children}) => {
     modal,
     setModal, 
     width,
+    dados,
+    setDados,
+    dado,
+    setDado,
   };
 
   return (

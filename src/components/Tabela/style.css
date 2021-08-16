@@ -32,6 +32,28 @@
   cursor: text;
 }
 
+.loading-data {
+  display: flex;
+  align-items: center;
+  height: 392px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.no-data {
+  display: flex;
+  align-items: center;
+  height: 392px;
+  justify-content: center;
+}
+
+.no-data h1, .loading-data h1 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #202639;
+}
+
 @media (max-width: 950px) {
   .ant-col {
     flex: 0 0 130px !important

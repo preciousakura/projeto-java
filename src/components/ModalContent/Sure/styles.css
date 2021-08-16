@@ -1,0 +1,50 @@
+.sure h1{
+  font-size: 20px;
+  text-align: center;
+}
+
+.sure svg{
+    font-size: 100px;
+    align-items: center;
+    color: #faad14;
+}
+
+.sure {
+  text-align: center;
+}
+
+.mod-botao {
+    display: flex;
+    justify-content: center;
+}
+
+.mod-botao .b{
+  margin: .8rem .5rem;
+  background: #008192;
+  padding: .5rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+  width: 60px;
+}
+
+.mod-botao .cancel{
+  border: 1px solid #008192;
+  background-color: white;
+}
+
+.mod-botao .cancel span{
+  color: #008192;
+}
+
+.mod-botao span {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    color: white;
+}
+
+.mod-botao .b:hover{
+    opacity: .8;
+
+}

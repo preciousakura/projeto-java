@@ -4,10 +4,18 @@ import { Grafico, Informacoes, SelectGrafico } from '../'
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Tooltip } from 'antd'
 import { UtilContext } from '../../utils/context'
+import { LoadingOutlined } from '@ant-design/icons';
 
-export function Modal() {
+export function Modal({loadingModal}) {
   const { setModal, modal } = useContext(UtilContext)
   return(
+  <>
+    {loadingModal ? 
+    <div className="loading-data">
+     <h1>Carregando</h1>
+     <LoadingOutlined style={{ fontSize: 30 }} spin />
+    </div>
+    : 
     <div className="content-modal">
       <div className='modal'>
         <div className="close">
@@ -21,6 +29,7 @@ export function Modal() {
         </div>
         <div className="comp"><Informacoes/></div>
       </div>
-    </div>
-    )
+    </div>}
+  </>
+  )
 }

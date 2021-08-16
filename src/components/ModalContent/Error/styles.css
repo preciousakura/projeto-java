@@ -1,0 +1,14 @@
+.error {
+  text-align: center;
+}
+
+.error svg{
+    font-size: 100px;
+    color:#d9363e;
+}
+
+.error h1{
+    font-size: 20px;
+}
+
+

@@ -1,0 +1,14 @@
+.success {
+  text-align: center;
+}
+
+.success svg{
+    font-size: 100px;
+    color:#008192;
+}
+
+.success h1{
+    font-size: 20px;
+}
+
+

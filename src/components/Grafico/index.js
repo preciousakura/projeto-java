@@ -1,13 +1,13 @@
 import React, {useContext} from 'react'
 import { Pie, Area, Column, Bar, Line } from '@ant-design/charts';
-import tabela from '../../data/data.json'
 import { UtilContext } from '../../utils/context'
 import './style.css'
 
 export function Grafico(){
-    const { selectEstado, selectChart } = useContext(UtilContext)
 
-    const data = tabela.UF.filter(estado => estado.nome.toUpperCase() === selectEstado.toUpperCase())[0].meses
+    const { selectEstado, selectChart, dados } = useContext(UtilContext)
+
+    const data = dados.filter(estado => estado.nome.toUpperCase() === selectEstado.toUpperCase())[0].meses
     const config_pizza = {
         appendPadding: 10,
         data: data,

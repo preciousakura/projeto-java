@@ -11,10 +11,11 @@
 
 .quadrado h1{
     font-weight: 700 !important;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: 'Open Sans', sans-serif;
     color: #202639;
     margin-bottom: 0 !important;
+    word-break: break-all;
 }
 
 .quadrado p{
