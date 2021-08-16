@@ -37,7 +37,7 @@ export function Tabela() {
       setLoading(true)
       const data = await getData();
       setDados(data)
-      setselectEstado(data[0]?.nome)
+      setselectEstado(data ? data[0].nome : '')
       setLoading(false)
     };
     response();

@@ -7,7 +7,7 @@ const {Option} = Select
 export function Selects() {
     const style = {minWidth: '150px'}
     const {  setselectEstado, dados } = useContext(UtilContext)
-
+    console.log(dados)
     return(
     <>
         <div className='content-select'>

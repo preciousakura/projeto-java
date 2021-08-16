@@ -7,7 +7,7 @@ export function getData() {
       return res.data;
     })
     .catch(err => {
-      return err;
+      console.log(err)
     });
   return response;
 }
@@ -19,7 +19,7 @@ export function getSingleData(id) {
       return res.data;
     })
     .catch(err => {
-      return err;
+      console.log(err)
     });
   return response;
 }
@@ -37,7 +37,7 @@ export function postFile(file) {
       console.log(res.data);
     })
     .catch(err => {
-      return err;
+      console.log(err)
     });
   return response;
 }
