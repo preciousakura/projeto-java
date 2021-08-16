@@ -10,13 +10,11 @@ export function Selects() {
 
     return(
     <>
-
         <div className='content-select'>
             <Select showSearch style={style} placeholder="Busque um estado" onChange={(e) => setselectEstado(e)}> 
-                {dados && (
-                dados?.map(estados=>
+                {dados?.map(estados=>
                     <Option value={estados.nome}>{estados.nome}</Option>
-                ))}
+                )}
             </Select>
         </div> 
     </>
