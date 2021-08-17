@@ -26,12 +26,15 @@ export function getSingleData(id) {
 
 export function postFile(file) {
   const formData = new FormData();
-  formData.append('file', file)
+  formData.append('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', file)
   const response = api
     .post('import', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+      headers:
+            {
+                'Content-Disposition': "attachment; filename=dados.xlsx",
+                'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            },
+            responseType: 'arraybuffer',
     })
     .then(res => {
       console.log(res.data);

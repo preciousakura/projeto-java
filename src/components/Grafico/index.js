@@ -7,7 +7,7 @@ export function Grafico(){
 
     const { selectEstado, selectChart, dados } = useContext(UtilContext)
 
-    const data = dados.filter(estado => estado.nome.toUpperCase() === selectEstado.toUpperCase())[0].meses
+    const data = dados?.filter(estado => estado.nome.toUpperCase() === selectEstado.toUpperCase())[0].meses
     const config_pizza = {
         appendPadding: 10,
         data: data,

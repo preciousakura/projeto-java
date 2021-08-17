@@ -7,15 +7,9 @@ import { UtilContext } from '../../utils/context'
 import { LoadingOutlined } from '@ant-design/icons';
 
 export function Modal({loadingModal}) {
-  const { setModal, modal } = useContext(UtilContext)
+  const { setModal, modal, dados } = useContext(UtilContext)
   return(
   <>
-    {loadingModal ? 
-    <div className="loading-data">
-     <h1>Carregando</h1>
-     <LoadingOutlined style={{ fontSize: 30 }} spin />
-    </div>
-    : 
     <div className="content-modal">
       <div className='modal'>
         <div className="close">
@@ -23,13 +17,25 @@ export function Modal({loadingModal}) {
             <AiFillCloseCircle onClick={()=>setModal(!modal)}/>
           </Tooltip>
         </div>
-        <div className="comp"> 
-          <div class="title-grafico"><h2>Selecione o tipo de gráfico: </h2><SelectGrafico/></div>
-          <Grafico/>
+        {loadingModal ? 
+        <div className="loading-data">
+         <h1>Carregando</h1>
+         <LoadingOutlined style={{ fontSize: 30 }} spin />
         </div>
-        <div className="comp"><Informacoes/></div>
+        : dados ? 
+        <> 
+          <div className="comp"> 
+            <div class="title-grafico"><h2>Selecione o tipo de gráfico: </h2><SelectGrafico/></div>
+            <Grafico/>
+          </div>
+          <div className="comp"><Informacoes/></div>
+        </>
+        :     
+        <div className="loading-data">
+          <h1>NENHUM DADO ENCONTRADO</h1>
+        </div>}
       </div>
-    </div>}
+    </div>
   </>
   )
 }

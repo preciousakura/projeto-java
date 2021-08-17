@@ -10,7 +10,7 @@ export function Upload({loading, setUpTable}) {
 
   const [file, setFile] = useState()
   const onChange = (e) => {
-    setFile(e)
+    setFile(e.file.originFileObj)
   }
   
   function beforeUpload(file) {
