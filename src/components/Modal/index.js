@@ -22,7 +22,7 @@ export function Modal({loadingModal}) {
          <h1>Carregando</h1>
          <LoadingOutlined style={{ fontSize: 30 }} spin />
         </div>
-        : dados ? 
+        : dados && dados.length > 0 ? 
         <> 
           <div className="comp"> 
             <div class="title-grafico"><h2>Selecione o tipo de gráfico: </h2><SelectGrafico/></div>
