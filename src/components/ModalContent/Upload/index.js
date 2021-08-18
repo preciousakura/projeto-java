@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Modal, Upload as Up, Spin, message } from 'antd'
 import { AiOutlineUpload } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs"
 import { postFile } from '../../../data/services'
 import './styles.css'
+import { UtilContext } from '../../../utils/context'
+import { LoadingOutlined } from '@ant-design/icons';
 const { Dragger } = Up;
 
-export function Upload({loading, setUpTable}) {
+export function Upload({setUpTable, setSucess, setError}) {
+
+  const { dados, setDados } = useContext(UtilContext)
+  const [loading, setLoading] = useState(false)
 
   const [file, setFile] = useState()
   const onChange = (e) => {
@@ -22,7 +27,17 @@ export function Upload({loading, setUpTable}) {
   }
   
   function filPost() {
-    if(file) postFile(file)
+    if(file) {
+      const res = postFile(file)
+      res.then(function(result) {
+        if(result.status === 200) {
+          setDados(result.data)
+          setSucess(true)
+        } 
+        else setError(true)
+      });
+      setUpTable(false)
+    }
   }
   
   return(
@@ -43,13 +58,12 @@ export function Upload({loading, setUpTable}) {
           downloadIcon: false,
           removeIcon: <BsTrash onClick={e => console.log(e, 'custom removeIcon event')} />,
         }}
-        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
         type="file"
         accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         beforeUpload={beforeUpload}
       >
         <div className="up-button">
-          {loading ? <Spin /> : <AiOutlineUpload />}
+          <AiOutlineUpload/>
           <h1>Arraste e solte o arquivo aqui.</h1>
         </div>
       </Dragger>

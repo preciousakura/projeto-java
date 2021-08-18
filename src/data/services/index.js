@@ -24,24 +24,43 @@ export function getSingleData(id) {
   return response;
 }
 
-export function postFile(file) {
-  const formData = new FormData();
-  formData.append('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', file)
-  const response = api
-    .post('import', formData, {
+
+export async function postFile(file) {
+  try {
+    const formData = new FormData();
+    formData.append('file', file)
+    const response = await api
+    .post('dados/import', formData, {
       headers:
             {
                 'Content-Disposition': "attachment; filename=dados.xlsx",
-                'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                'Content-Type': 'multipart/form-data'
             },
-            responseType: 'arraybuffer',
     })
-    .then(res => {
-      console.log(res.data);
-    })
-    .catch(err => {
-      console.log(err)
-    });
-  return response;
+
+    let data = response;
+    return data;
+  } catch (error) {
+    return error.response;
+  }
 }
+// export function postFile(file) {
+  // const formData = new FormData();
+  // formData.append('file', file)
+//   const response = api
+//     .post('dados/import', formData, {
+//       headers:
+//             {
+//                 'Content-Disposition': "attachment; filename=dados.xlsx",
+//                 'Content-Type': 'multipart/form-data'
+//             },
+//     })
+//     .then(res => {
+//       return res.status
+//     })
+//     .catch(err => {
+//       return err.response
+//     });
+// }
+
 

@@ -3,7 +3,7 @@ import { Modal } from 'antd'
 import { BiErrorCircle } from "react-icons/bi"
 import './styles.css'
 
-export function Error({text}) {
+export function Error({text, setVisible}) {
   return (
     <Modal
       centered
@@ -17,7 +17,7 @@ export function Error({text}) {
         <BiErrorCircle />
         <h1>{text}</h1>
         <div className='mod-botao'>
-          <div className ='b continue'><span>OK</span></div>
+          <div className='b continue' onClick={() => setVisible(false)}><span>OK</span></div>
         </div>
      </div>
     </Modal>

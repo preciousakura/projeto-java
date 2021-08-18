@@ -59,13 +59,13 @@ export function Tabela() {
           </div>
           <div className='tabela-content'>
         <Row wrap={false}>
-          {dados.map((estados) => 
-            <Col span={3}><div style={row_title}>{estado.UF.find((value) => value.nome === estados.nome).sigla}</div></Col>
+          {dados?.map((estados) => 
+            <Col span={3}><div style={row_title}>{estado.UF.find((value) => value.nome === estados.nome)?.sigla}</div></Col>
           )}
         </Row>
         {meses.map((mes) => 
           <Row wrap={false}>
-             {dados.map((valor, index) => 
+             {dados?.map((valor, index) => 
                 <Col ref={violationRef[index]} style={valor.nome.toUpperCase() !== selectEstado.toUpperCase() ? col_Unselect : col_select} span={3}>
                   <Input disabled={valor.nome.toUpperCase() !== selectEstado.toUpperCase()} bordered={false} defaultValue={(valor.meses.filter(month=> month.mes === mes)[0].value).toLocaleString('pt-BR')} />
                 </Col>

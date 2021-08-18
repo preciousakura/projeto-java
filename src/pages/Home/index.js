@@ -12,6 +12,8 @@ export function Home() {
 
   const { setModal, modal, width, setDado, selectEstado, dados } = useContext(UtilContext)
   const [upTable, setUpTable] = useState(false)
+  const [sucessUpTable, setSucessUpTable] = useState(false)
+  const [errosUpTable, setErrosUpTable] = useState(false)
   const [loadingModal, setLoadingModal] = useState(false)
   
   const attDataSingle = useCallback(() => {
@@ -64,7 +66,9 @@ export function Home() {
         </div>
       </div>
       {modal && (<Modal loadingModal={loadingModal}/>)}
-      {upTable && (<Upload setUpTable={setUpTable}/>)}
+      {upTable && (<Upload setError={setErrosUpTable} setSucess={setSucessUpTable} setUpTable={setUpTable}/>)}
+      {sucessUpTable && (<Success setVisible={setSucessUpTable} text="Tabela carregada com sucesso!"/>)}
+      {errosUpTable && (<Error setVisible={setErrosUpTable} text="Erro ao carregar tabela!"/>)}
     </div>
   </>
   )
