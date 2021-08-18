@@ -24,6 +24,26 @@ export function getSingleData(id) {
   return response;
 }
 
+export function getExcelFile() {
+  const response = api
+    .get(`/dados/export`, {
+      responseType: 'blob',
+    })
+    .then(res => {
+       const url = window.URL.createObjectURL(new Blob([res.data]));
+       const link = document.createElement('a');
+       link.href = url;
+       link.setAttribute('download', 'dados.xlsx'); //or any other extension
+       document.body.appendChild(link);
+       link.click();
+    })
+    .catch(err => {
+      return err
+    });
+  return response;
+}
+
+
 
 export async function postFile(file) {
   try {

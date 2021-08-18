@@ -10,7 +10,7 @@ const { Dragger } = Up;
 
 export function Upload({setUpTable, setSucess, setError}) {
 
-  const { dados, setDados } = useContext(UtilContext)
+  const { dados, setDados, setselectEstado } = useContext(UtilContext)
   const [loading, setLoading] = useState(false)
 
   const [file, setFile] = useState()
@@ -32,6 +32,7 @@ export function Upload({setUpTable, setSucess, setError}) {
       res.then(function(result) {
         if(result.status === 200) {
           setDados(result.data)
+          setselectEstado(result.data && result.data.length > 0 ? result.data[0].nome : '')
           setSucess(true)
         } 
         else setError(true)

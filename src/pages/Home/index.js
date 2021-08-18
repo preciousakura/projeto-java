@@ -1,6 +1,6 @@
 import React, { useContext, useState, useCallback } from 'react'
 import { TabelaResponsiva, Tabela, Selects, Modal } from '../../components'
-import { getSingleData } from '../../data/services'
+import { getSingleData, getExcelFile } from '../../data/services'
 import { AiOutlineBorderlessTable } from "react-icons/ai";
 import { Sure, Success, Upload, Error, Spin } from '../../components/ModalContent'
 import { Tooltip } from 'antd'
@@ -15,6 +15,7 @@ export function Home() {
   const [sucessUpTable, setSucessUpTable] = useState(false)
   const [errosUpTable, setErrosUpTable] = useState(false)
   const [loadingModal, setLoadingModal] = useState(false)
+  const [sucessDown, setSucessDown] = useState(false)
   
   const attDataSingle = useCallback(() => {
     const response = async () => {
@@ -30,6 +31,11 @@ export function Home() {
   function current() {
     attDataSingle()
     setModal(!modal)
+  }
+
+  function downloadExcel() {
+    getExcelFile()
+    setSucessDown(true)
   }
   
   return (
@@ -56,7 +62,7 @@ export function Home() {
             
             {dados?.length > 0 && (<span className='title'>
               <Tooltip color={'#202639'} placement="top" title="Baixar Arquivo">
-                <AiOutlineDownload/>
+                <AiOutlineDownload onClick={() => downloadExcel()} />
               </Tooltip>
             </span>)}
           </div>
@@ -69,6 +75,7 @@ export function Home() {
       {upTable && (<Upload setError={setErrosUpTable} setSucess={setSucessUpTable} setUpTable={setUpTable}/>)}
       {sucessUpTable && (<Success setVisible={setSucessUpTable} text="Tabela carregada com sucesso!"/>)}
       {errosUpTable && (<Error setVisible={setErrosUpTable} text="Erro ao carregar tabela!"/>)}
+      {sucessDown && (<Success setVisible={setSucessDown} text="Tabela baixada com sucesso!"/>)}
     </div>
   </>
   )
