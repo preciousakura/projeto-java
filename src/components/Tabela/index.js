@@ -1,5 +1,5 @@
 import React, {useContext, createRef, useMemo, useEffect, useState} from 'react'
-import { getData } from '../../data/services'
+import { getData, editSingleData } from '../../data/services'
 import estado from '../../data/estados.json'
 import { Row, Col, Input } from 'antd'
 import { UtilContext } from '../../utils/context'
@@ -18,12 +18,19 @@ export function Tabela() {
   const { selectEstado, width, dados, setDados, setselectEstado } = useContext(UtilContext)
   const [editTable, setEditTable] = useState(false)
   const [loading, setLoading] = useState(true)
+
+  const [editValuesByMonth, setEditValuesByMonth] = useState([]);
   
   const violationRef = useMemo(() => Array(27).fill(0).map(i=> createRef()), []);
   
   useEffect(() => {
   if(dados?.length > 0 && selectEstado) {
       const index = dados?.indexOf(dados?.find((value) => value.nome === selectEstado), 0)
+      let array = [];
+      dados[index].meses.map((element, index) => {
+        array.push(element.value)
+      })
+      setEditValuesByMonth(array);
       violationRef[index].current.scrollIntoView({ 
         behavior: 'smooth',
         block: 'end',
@@ -42,7 +49,6 @@ export function Tabela() {
     };
     response();
   }, []);
-  
   
   return(
     <>
@@ -63,11 +69,20 @@ export function Tabela() {
             <Col span={3}><div style={row_title}>{estado.UF.find((value) => value.nome === estados.nome)?.sigla}</div></Col>
           )}
         </Row>
-        {meses.map((mes) => 
+        {meses.map((mes, indexMes) => 
           <Row wrap={false}>
              {dados?.map((valor, index) => 
                 <Col ref={violationRef[index]} style={valor.nome.toUpperCase() !== selectEstado.toUpperCase() ? col_Unselect : col_select} span={3}>
-                  <Input disabled={valor.nome.toUpperCase() !== selectEstado.toUpperCase()} bordered={false} defaultValue={(valor.meses.filter(month=> month.mes === mes)[0].value).toLocaleString('pt-BR')} />
+                  <Input 
+                    disabled={valor.nome.toUpperCase() !== selectEstado.toUpperCase()} 
+                    bordered={false} 
+                    defaultValue={(valor.meses.filter(month=> month.mes === mes)[0].value).toLocaleString('pt-BR')}
+                    onChange={(e) => {
+                      const array = editValuesByMonth
+                      array[indexMes] = Number(e.target.defaultValue.replace('.', ''));
+                      setEditValuesByMonth(array);                   
+                    }} 
+                  />
                 </Col>
              )}
           </Row>
@@ -76,10 +91,10 @@ export function Tabela() {
       </div> 
       {width > 500 && (
           <div className="editar">
-            <span className='title' onClick={()=>setEditTable(true)}>Editar</span>
+            <span className='title' onClick={()=>setEditTable(true)}>Salvar Alterações</span>
           </div>
       )}  
-      {editTable && (<Sure setEditTable={setEditTable}/>)}
+      {editTable && (<Sure setEditTable={setEditTable} editValues={editValuesByMonth} />)}
       </>
       : loading ? 
       <>
