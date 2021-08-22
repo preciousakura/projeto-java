@@ -2,7 +2,7 @@ import React, { useContext, useState, useCallback } from 'react'
 import { TabelaResponsiva, Tabela, Selects, Modal } from '../../components'
 import { getSingleData, getExcelFile } from '../../data/services'
 import { AiOutlineBorderlessTable } from "react-icons/ai";
-import { Sure, Success, Upload, Error, Spin } from '../../components/ModalContent'
+import { Success, Upload, Error } from '../../components/ModalContent'
 import { Tooltip } from 'antd'
 import { UtilContext } from '../../utils/context'
 import { AiOutlineUpload, AiOutlineDownload } from "react-icons/ai";
@@ -25,7 +25,7 @@ export function Home() {
       setLoadingModal(false)
     };
     response();
-  }, [selectEstado])
+  }, [selectEstado, setDado])
   
   
   function current() {

@@ -1,5 +1,5 @@
 import React, {useContext, createRef, useMemo, useEffect, useState} from 'react'
-import { getData, editSingleData } from '../../data/services'
+import { getData } from '../../data/services'
 import estado from '../../data/estados.json'
 import { Row, Col, Input } from 'antd'
 import { UtilContext } from '../../utils/context'
@@ -17,22 +17,23 @@ export function Tabela() {
   
   const { selectEstado, width, dados, setDados, setselectEstado } = useContext(UtilContext)
   const [editTable, setEditTable] = useState(false)
-  const [confirmEditTable, setConfirmEditTable] = useState(false)
   const [confirmEditState, setConfirmEditState] = useState(false)
   const [loading, setLoading] = useState(true)
 
   const violationRef = useMemo(() => Array(27).fill(0).map(i=> createRef()), []);
-  
+  const [currentData, setCurrentData] = useState(undefined);
+
   useEffect(() => {
   if(dados?.length > 0 && selectEstado) {
       const index = dados?.indexOf(dados?.find((value) => value.nome === selectEstado), 0)
-      violationRef[index].current.scrollIntoView({ 
+      violationRef[index]?.current.scrollIntoView({ 
         behavior: 'smooth',
         block: 'end',
         inline: 'center'
       }); 
+      setCurrentData(dados[index])
     }
-  }, [selectEstado])
+  }, [selectEstado, violationRef, dados])
   
   useEffect(() => {
     const response = async () => {
@@ -43,17 +44,20 @@ export function Tabela() {
       setLoading(false)
     };
     response();
-  }, []);
+  }, [setDados, setselectEstado]);
 
   
   const HandleValue = (e, indexMes, indexDado) => {
-    const mes = dados[indexDado].meses[indexMes]
-    mes.value = Number(e.target.value.replace(/\D/g, ''))
-    const old = dados[indexDado].meses[indexMes];
-    const updated = { ...old, value: mes.value }
-    const clone = [...dados];
-    clone[indexDado].meses[indexMes] = updated;
-    setDados(clone)
+    if(currentData) {
+      const mes = currentData.meses[indexMes]
+      mes.value = Number(e.target.value.replace(/\D/g, ''))
+      const old = currentData.meses[indexMes];
+      const updated = { ...old, value: mes.value }
+      const clone = {...currentData};
+      console.log(clone.meses[indexMes])
+      clone.meses[indexMes] = updated;
+      setCurrentData(clone)
+    }
   }
   
   return(
@@ -79,14 +83,20 @@ export function Tabela() {
           <Row wrap={false}>
              {dados?.map((valor, index) => 
                 <Col ref={violationRef[index]} style={valor.nome.toUpperCase() !== selectEstado.toUpperCase() ? col_Unselect : col_select} span={3}>
-                  <Input 
-                    disabled={valor.nome.toUpperCase() !== selectEstado.toUpperCase()} 
+                  {valor.nome.toUpperCase() !== selectEstado.toUpperCase() ? 
+                    <Input 
+                    disabled={true} 
                     bordered={false} 
                     value={(valor.meses.filter(month=> month.mes === mes)[0].value).toLocaleString('pt-BR')}
-                    onChange={(e) => {
-                      HandleValue(e, indexMes, index)
-                    }} 
-                  />
+                  /> : 
+                  <Input 
+                  bordered={false} 
+                  value={(currentData?.meses[indexMes].value)?.toLocaleString('pt-BR')}
+                  onChange={(e) => {
+                    HandleValue(e, indexMes, index)
+                  }} 
+                />
+                }
                 </Col>
              )}
           </Row>
@@ -98,7 +108,7 @@ export function Tabela() {
             <span className='title' onClick={()=>setEditTable(true)}>Salvar Alterações</span>
           </div>
       )}  
-      {editTable && (<Sure setEditTable={setEditTable} label={"Tem certeza que deseja editar? Essa ação é irreversível"} setConfirmEditState={setConfirmEditState} />)}
+      {editTable && (<Sure currentData={currentData} setEditTable={setEditTable} label={"Tem certeza que deseja editar? Essa ação é irreversível"} setConfirmEditState={setConfirmEditState} />)}
       {confirmEditState && (<Success setVisible={setConfirmEditState} text={"Alterações salvas com sucesso!"} />)}
       </>
       : loading ? 

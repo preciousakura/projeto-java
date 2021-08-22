@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Modal, Upload as Up, Spin, message } from 'antd'
+import { Modal, Upload as Up, message } from 'antd'
 import { AiOutlineUpload } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs"
 import { postFile } from '../../../data/services'
@@ -10,7 +10,7 @@ const { Dragger } = Up;
 
 export function Upload({setUpTable, setSucess, setError}) {
 
-  const { dados, setDados, setselectEstado } = useContext(UtilContext)
+  const { setDados, setselectEstado } = useContext(UtilContext)
 
   const [loading, setLoading] = useState(false)
 
@@ -44,7 +44,6 @@ export function Upload({setUpTable, setSucess, setError}) {
           setError(true)
         }
       });
-
     }
   }
   

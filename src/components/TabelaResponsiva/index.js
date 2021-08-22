@@ -26,7 +26,7 @@ export function TabelaResponsiva() {
       block: 'end',
       inline: 'center'
     });    
-  }, [selectEstado])
+  }, [selectEstado, violationRef])
   
   const onLeft = () => {
     const index = tabela.UF.indexOf(tabela.UF.find((value) => value.nome === selectEstado), 0)

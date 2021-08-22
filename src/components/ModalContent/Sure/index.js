@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
 import { Modal } from 'antd'
-import { FaQuestion, FaCheckSquare } from "react-icons/fa";
+import { FaQuestion } from "react-icons/fa";
 import './styles.css'
 import { editSingleData } from '../../../data/services'
 import { UtilContext } from '../../../utils/context'
 
-export function Sure({setEditTable, label, confirmEdit = false, setConfirmEditState}) {
+export function Sure({currentData, setEditTable, label, setConfirmEditState}) {
 
   const { selectEstado, dados } = useContext(UtilContext)
 
   function handleEditValues() {
-    const index = dados?.indexOf(dados?.find((value) => value.nome === selectEstado), 0)
-    editSingleData(dados[index]);
+    editSingleData(currentData);
   }
 
   return(
