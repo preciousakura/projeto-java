@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Modal } from 'antd'
-import { FaQuestion } from "react-icons/fa";
+import { FaQuestion, FaCheckSquare } from "react-icons/fa";
 import './styles.css'
 import { editSingleData } from '../../../data/services'
 import { UtilContext } from '../../../utils/context'
 
-export function Sure({setEditTable, editValues}) {
+export function Sure({setEditTable, editValues, label, confirmEdit = false, setConfirmEditState}) {
 
   const { selectEstado, dados } = useContext(UtilContext)
 
@@ -29,12 +29,30 @@ export function Sure({setEditTable, editValues}) {
       closable={false}
     >
     <div className='content-mod sure'>
-     <FaQuestion/>
-     <h1>Tem certeza que deseja editar? Essa ação é irreversível</h1>
-     <div className='mod-botao'>
-      <div className='b continue' onClick={() => handleEditValues()}><span>SIM</span></div>
-      <div className='b cancel' onClick={() => setEditTable(false)}><span>NÃO</span></div>
+      {confirmEdit ? (
+        <FaCheckSquare />
+      )
+      :
+      (
+        <FaQuestion/>
+      )}
+     <h1>{label}</h1>
+     {confirmEdit ? (
+       <div className='mod-botao'>
+        <div className='b continue' onClick={() => setConfirmEditState(false)}><span>Ok</span></div>
+      </div>
+     )
+    :
+    (
+      <div className='mod-botao'>
+        <div className='b continue' onClick={() => {
+          handleEditValues()
+          setConfirmEditState(true)
+          setEditTable(false)
+          }}><span>SIM</span></div>
+        <div className='b cancel' onClick={() => setEditTable(false)}><span>NÃO</span></div>
      </div>
+    )}
     </div>
     </Modal>
   )

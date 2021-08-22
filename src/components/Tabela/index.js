@@ -3,7 +3,7 @@ import { getData, editSingleData } from '../../data/services'
 import estado from '../../data/estados.json'
 import { Row, Col, Input } from 'antd'
 import { UtilContext } from '../../utils/context'
-import { Sure } from '../ModalContent'
+import { Sure, Success } from '../ModalContent'
 import { LoadingOutlined } from '@ant-design/icons';
 import './style.css'
 
@@ -17,6 +17,8 @@ export function Tabela() {
   
   const { selectEstado, width, dados, setDados, setselectEstado } = useContext(UtilContext)
   const [editTable, setEditTable] = useState(false)
+  const [confirmEditTable, setConfirmEditTable] = useState(false)
+  const [confirmEditState, setConfirmEditState] = useState(false)
   const [loading, setLoading] = useState(true)
 
   const [editValuesByMonth, setEditValuesByMonth] = useState([]);
@@ -76,11 +78,12 @@ export function Tabela() {
                   <Input 
                     disabled={valor.nome.toUpperCase() !== selectEstado.toUpperCase()} 
                     bordered={false} 
-                    defaultValue={(valor.meses.filter(month=> month.mes === mes)[0].value).toLocaleString('pt-BR')}
+                    value={(valor.meses.filter(month=> month.mes === mes)[0].value).toLocaleString('pt-BR')}
                     onChange={(e) => {
-                      const array = editValuesByMonth
-                      array[indexMes] = Number(e.target.defaultValue.replace('.', ''));
-                      setEditValuesByMonth(array);                   
+                      const array = [...dados];
+                      array[index].meses[indexMes].value = Number(e.target.value);
+                      setDados(array);
+                      console.log(dados);                   
                     }} 
                   />
                 </Col>
@@ -94,7 +97,8 @@ export function Tabela() {
             <span className='title' onClick={()=>setEditTable(true)}>Salvar Alterações</span>
           </div>
       )}  
-      {editTable && (<Sure setEditTable={setEditTable} editValues={editValuesByMonth} />)}
+      {editTable && (<Sure setEditTable={setEditTable} editValues={editValuesByMonth} label={"Tem certeza que deseja editar? Essa ação é irreversível"} setConfirmEditState={setConfirmEditState} />)}
+      {confirmEditState && (<Success setVisible={setConfirmEditState} text={"Alterações salvas com sucesso!"} />)}
       </>
       : loading ? 
       <>
