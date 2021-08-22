@@ -32,7 +32,7 @@ export function Upload({setUpTable, setSucess, setError}) {
       setLoading(true)
       const res = postFile(file)
       res.then(function(result) {
-        if(result.status === 200) {
+        if(result?.status === 200) {
           setDados(result.data)
           setselectEstado(result.data && result.data.length > 0 ? result.data[0].nome : '')
           setLoading(false)

@@ -1,13 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Modal } from 'antd'
 import { FaQuestion } from "react-icons/fa";
 import './styles.css'
 import { editSingleData } from '../../../data/services'
-import { UtilContext } from '../../../utils/context'
 
 export function Sure({currentData, setEditTable, label, setConfirmEditState}) {
 
-  const { selectEstado, dados } = useContext(UtilContext)
 
   function handleEditValues() {
     editSingleData(currentData);
