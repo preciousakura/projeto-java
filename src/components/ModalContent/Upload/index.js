@@ -11,6 +11,7 @@ const { Dragger } = Up;
 export function Upload({setUpTable, setSucess, setError}) {
 
   const { dados, setDados, setselectEstado } = useContext(UtilContext)
+
   const [loading, setLoading] = useState(false)
 
   const [file, setFile] = useState()
@@ -28,16 +29,22 @@ export function Upload({setUpTable, setSucess, setError}) {
   
   function filPost() {
     if(file) {
+      setLoading(true)
       const res = postFile(file)
       res.then(function(result) {
         if(result.status === 200) {
           setDados(result.data)
           setselectEstado(result.data && result.data.length > 0 ? result.data[0].nome : '')
+          setLoading(false)
           setSucess(true)
+          setUpTable(false)
         } 
-        else setError(true)
+        else {
+          setLoading(false)
+          setError(true)
+        }
       });
-      setUpTable(false)
+
     }
   }
   
@@ -63,10 +70,17 @@ export function Upload({setUpTable, setSucess, setError}) {
         accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         beforeUpload={beforeUpload}
       >
-        <div className="up-button">
-          <AiOutlineUpload/>
-          <h1>Arraste e solte o arquivo aqui.</h1>
-        </div>
+          {loading ? 
+            <div className="loading-data">
+              <h1>Carregando</h1>
+              <LoadingOutlined style={{ fontSize: 30 }} spin />
+            </div>
+          :
+            <div className="up-button">
+            <AiOutlineUpload/>
+            <h1>Arraste e solte o arquivo aqui.</h1>
+            </div>
+          }
       </Dragger>
       <div className='up-mod'>
         <div className='up-b cancel'><span onClick={() => setUpTable(false)}>CANCELAR</span></div>

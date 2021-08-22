@@ -17,7 +17,7 @@ export function Informacoes() {
     
     {dado && (    <div className='info-quadrados'>
         <Quadrado nome="Média" number={(dado?.media).toLocaleString('pt-BR')}/>
-        <Quadrado nome="Moda" number={(dado?.moda).toLocaleString('pt-BR')}/>
+        <Quadrado nome="Moda" number={(dado?.moda) === -1 ? "Sem moda" : (dado?.moda).toLocaleString('pt-BR')}/>
         <Quadrado nome="Desvio Padrão" number={(dado?.desvio_padrao).toLocaleString('pt-BR')}/>
         <Quadrado nome="Variância" number={(dado?.variancia).toLocaleString('pt-BR')}/>
         <Quadrado nome="Máximo" number={(dado?.max).toLocaleString('pt-BR')}/>
