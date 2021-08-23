@@ -3,7 +3,7 @@ import { getData } from '../../data/services'
 import estado from '../../data/estados.json'
 import { Row, Col, Input } from 'antd'
 import { UtilContext } from '../../utils/context'
-import { Sure, Success } from '../ModalContent'
+import { Sure, Success, Error } from '../ModalContent'
 import { LoadingOutlined } from '@ant-design/icons';
 import './style.css'
 
@@ -19,6 +19,7 @@ export function Tabela() {
   const [editTable, setEditTable] = useState(false)
   const [confirmEditState, setConfirmEditState] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [erroEdit, setErroEdit] = useState(false)
 
   const violationRef = useMemo(() => Array(27).fill(0).map(i=> createRef()), []);
   const [currentData, setCurrentData] = useState(undefined);
@@ -58,6 +59,13 @@ export function Tabela() {
       clone.meses[indexMes] = updated;
       setCurrentData(clone)
     }
+  }
+
+  const saveEdit = () => {
+    if(currentData === dados[dados?.indexOf(dados?.find((value) => value.nome === selectEstado), 0)])
+      setErroEdit(true)
+    else
+      setEditTable(true)
   }
   
   return(
@@ -105,11 +113,12 @@ export function Tabela() {
       </div> 
       {width > 500 && (
           <div className="editar">
-            <span className='title' onClick={()=>setEditTable(true)}>Salvar Alterações</span>
+            <span className='title' onClick={()=> saveEdit()}>Salvar Alterações</span>
           </div>
       )}  
       {editTable && (<Sure currentData={currentData} setEditTable={setEditTable} label={"Tem certeza que deseja editar? Essa ação é irreversível"} setConfirmEditState={setConfirmEditState} />)}
       {confirmEditState && (<Success setVisible={setConfirmEditState} text={"Alterações salvas com sucesso!"} />)}
+      {erroEdit && (<Error setVisible={setErroEdit} text="Não há alterações para serem salvas."/>)}
       </>
       : loading ? 
       <>
