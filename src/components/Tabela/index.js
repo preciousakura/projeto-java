@@ -45,7 +45,7 @@ export function Tabela() {
       setLoading(false)
     };
     response();
-  }, [setDados, setselectEstado]);
+  }, [setDados, setselectEstado, confirmEditState]);
 
   
   const HandleValue = (e, indexMes, indexDado) => {
