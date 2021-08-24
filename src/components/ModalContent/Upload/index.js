@@ -34,7 +34,7 @@ export function Upload({setUpTable, setSucess, setError}) {
       res.then(function(result) {
         if(result?.status === 200) {
           setDados(result.data)
-          setselectEstado(result.data && result.data.length > 0 ? result.data[0].nome : '')
+          setselectEstado('')
           setLoading(false)
           setSucess(true)
           setUpTable(false)
@@ -82,7 +82,7 @@ export function Upload({setUpTable, setSucess, setError}) {
           }
       </Dragger>
       <div className='up-mod'>
-        <div className='up-b cancel'><span onClick={() => setUpTable(false)}>CANCELAR</span></div>
+        <div className='up-b cancel' onClick={() => setUpTable(false)}><span>CANCELAR</span></div>
         <div className='up-b' onClick={() => filPost()}><span>FAZER UPLOAD</span></div>
       </div>
     </Modal>

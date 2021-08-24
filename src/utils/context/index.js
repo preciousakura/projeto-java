@@ -12,6 +12,8 @@ export const UtilContext = createContext({
   setDados() {},
   dado: undefined,
   setDado() {},
+  isDownload: false,
+  setIsDownload() {}
 });
 
 export const ProviderUtil = ({children}) => {
@@ -20,6 +22,7 @@ export const ProviderUtil = ({children}) => {
   const [selectEstado, setselectEstado] = useState('');
   const [selectChart, setSelectChart] = useState('BARRA');
   const [modal, setModal] = useState(false);
+  const [isDownload, setIsDownload] = useState(false);
   
   const [width, setWidth] = React.useState(window.innerWidth);
 
@@ -44,6 +47,8 @@ export const ProviderUtil = ({children}) => {
     setDados,
     dado,
     setDado,
+    isDownload,
+    setIsDownload
   };
 
   return (

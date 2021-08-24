@@ -6,7 +6,6 @@ import './style.css'
 export function Informacoes() {
     const { selectEstado, dado } = useContext(UtilContext)
     
-    console.log("dado", dado)
       
     return(
     <>

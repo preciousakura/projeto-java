@@ -7,7 +7,7 @@ import { UtilContext } from '../../utils/context'
 import { LoadingOutlined } from '@ant-design/icons';
 
 export function Modal({loadingModal}) {
-  const { setModal, modal, dados } = useContext(UtilContext)
+  const { setModal, modal, dados, selectEstado } = useContext(UtilContext)
   return(
   <>
     <div className="content-modal">
@@ -22,7 +22,7 @@ export function Modal({loadingModal}) {
          <h1>Carregando</h1>
          <LoadingOutlined style={{ fontSize: 30 }} spin />
         </div>
-        : dados && dados.length > 0 ? 
+        : dados && dados.length > 0 && selectEstado !== '' ? 
         <> 
           <div className="comp"> 
             <div class="title-grafico"><h2>Selecione o tipo de gráfico: </h2><SelectGrafico/></div>
@@ -30,7 +30,11 @@ export function Modal({loadingModal}) {
           </div>
           <div className="comp"><Informacoes/></div>
         </>
-        :     
+        : selectEstado === '' ?
+        <div className="loading-data">
+          <h1>NENHUMA COLUNA SELECIONADA</h1>
+        </div>
+        :   
         <div className="loading-data">
           <h1>NENHUM DADO ENCONTRADO</h1>
         </div>}

@@ -1,15 +1,18 @@
 import React, { useContext } from 'react';
 import { Modal } from 'antd'
 import { FaQuestion } from "react-icons/fa";
-import './styles.css'
-import { editSingleData } from '../../../data/services'
 import { UtilContext } from '../../../utils/context'
+import { getExcelFile } from '../../../data/services'
 
-export function Sure({currentData, setEditTable, label, setConfirmEditState}) {
+export function SureDownload({setVisible, label, setSuccessVisible}) {
+
   const { setIsDownload } = useContext(UtilContext)
-  function handleEditValues() {
-    editSingleData(currentData);
-    setIsDownload(true)
+
+  function handleDownload() {
+    getExcelFile()
+    setIsDownload(false)
+    setVisible(false)
+    setSuccessVisible(true)
   }
 
   return(
@@ -26,12 +29,10 @@ export function Sure({currentData, setEditTable, label, setConfirmEditState}) {
      <h1>{label}</h1>
      <div className='mod-botao'>
         <div className='b continue' onClick={() => {
-          handleEditValues()
-          setConfirmEditState(true)
-          setEditTable(false)
+          handleDownload()
           }}>
             <span>SIM</span></div>
-        <div className='b cancel' onClick={() => setEditTable(false)}>
+        <div className='b cancel' onClick={() => setVisible(false)}>
           <span>NÃO</span>
         </div>
      </div>
