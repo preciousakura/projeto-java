@@ -41,10 +41,10 @@ export function Tabela() {
       setLoading(true)
       const data = await getData();
       setDados(data)
-      setselectEstado(data && data.length > 0 ? data[0].nome : '')
       setLoading(false)
     };
-    response();
+    if(confirmEditState === false)
+      response();
   }, [setDados, setselectEstado, confirmEditState]);
 
   
